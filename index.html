@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:url" content="http://facebookincubator.github.io/TextLayoutBuilder" />
+    <meta property="og:url" content="https://fb-textlayout.liaohuqiu.net" />
     <meta property="og:site_name" content="TextLayoutBuilder"/>
     <meta property="og:title" content="TextLayoutBuilder | Build text Layouts easily on Android." />
-    <meta property="og:image" content="http://facebookincubator.github.io/TextLayoutBuilder/logo.png" />
+    <meta property="og:image" content="https://fb-textlayout.liaohuqiu.net/logo.png" />
     <meta property="og:description" content="TextLayoutBuilder is a utility to build text layouts easily on Android." />
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -18,14 +18,14 @@
     <title>TextLayoutBuilder</title>
     <meta name="description" content="TextLayoutBuilder is a utility to build text layouts easily on Android.">
 
-    <link rel="canonical" href="http://facebookincubator.github.io/TextLayoutBuilder">
+    <link rel="canonical" href="https://fb-textlayout.liaohuqiu.net">
   </head>
 
   <body>
     <!-- Header -->
     <div class="headerContainer">
       <header class="wrapper">
-        <a href="http://facebookincubator.github.io/TextLayoutBuilder">
+        <a href="https://fb-textlayout.liaohuqiu.net">
           <img src="./logo.png">
           <h2>TextLayoutBuilder</h2>
         </a>
@@ -49,19 +49,16 @@
     <div class="contentsContainer">
       <div class="wrapper">
         <section>
-          <h2>Build text layouts easily on Android!</h2>
+          <h2>在 Android 中轻松实现文字布局</h2>
           <div class="introContainer">
             <div class="intro">
-              <p><code>TextLayoutBuilder</code> uses a builder pattern to configure the properties
-                required to create a <code>Layout</code>. The methods on this builder class are
-                similar to <code>TextView</code>'s. On calling <code>build()</code>, the
-                <code>TextLayoutBuilder</code> creates a text <code>Layout</code> based on
-                the properties set on it.</p>
+              <p><code>TextLayoutBuilder</code> 使用和 builder 模式来配置创建 <code>Layout</code> 所需的参数。这个 Builder 类和 <code>TextView</code> 的很相似。调用 <code>build()</code>，
+              <code>TextLayoutBuilder</code> 即可根据设定的参数创建一个文本 <code>Layout</code>。</p>
               <ul>
-                <li>Create text layouts easily.</li>
-                <li>Reuse builders to create similarly styled layouts.</li>
-                <li>Cache layouts of commonly used strings.</li>
-                <li>Improve performance with FreeType cache warming.</li>
+                <li>轻松创建文字布局。</li>
+                <li>相似风格的布局，可重用 builder。</li>
+                <li>可缓存常用文字布局。</li>
+                <li>FreeType 缓存预热。</li>
               </ul>
             </div>
             <div class="intro">
@@ -84,24 +81,19 @@ Layout layout = new TextLayoutBuilder()
     <div class="instructionsContainer">
       <div class="wrapper">
         <section>
-          <h3>Features</h3>
+          <h3>特性</h3>
           <div class="featureContainer">
             <div class="feature">
               <h4>Builder</h4>
-              <p><code>TextLayoutBuilder</code> uses a builder pattern to configure the properties
-                for the <code>Layout</code>. Gone are those days of trying to set properties on
-                a <code>StaticLayout</code>.</p>
+              <p><code>TextLayoutBuilder</code> 使用 builder 模式配置创建 <code>Layout</code> 所需的参数，设置 <code>StaticLayout</code> 参数的日子一动不复返了。</p>
             </div>
             <div class="feature">
-              <h4>Caching</h4>
-              <p>Same properties will return same <code>Layout</code> on subsequent <code>build()</code>
-                calls. This reduces allocation on commonly used texts.</p>
+              <h4>缓存</h4>
+              <p>调用 <code>build()</code>，对于一样的参数，将会返回同一个 <code>Layout</code>，对于通用 / 常用的文字布局，这减少了重复调用的消耗。</p>
             </div>
             <div class="feature">
-              <h4>Glyph Warming</h4>
-              <p>On 4.0+ devices, TextLayoutBuilder can warm up the FreeType font cache. By drawing these
-                glyphs on a background thread onto a <code>Picture</code>, <code>TextLayoutBuilder</code> warms
-                these glyphs and can help reduce their render time.</p>
+              <h4>FreeType 预热</h4>
+              <p>对于 4.0+ 设备, TextLayoutBuilder 可预热 FreeType 字体的缓存。<code>TextLayoutBuilder</code> 在一个后台线程将这些图形绘制到一张图片上，这样可预热图片减少之后的渲染时间。</p>
             </div>
           </div>
         </section>
@@ -112,14 +104,14 @@ Layout layout = new TextLayoutBuilder()
     <div class="instructionsContainer alternate">
       <div class="wrapper">
         <section>
-          <h3>Download</h3>
+          <h3>引入</h3>
           <ul>
             <li>
-              If using Gradle, add this to your <code>build.gradle</code>:
+              <code>build.gradle</code>:
               <pre>compile 'com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0'</pre>
             </li>
             <li>
-              or, if using Maven:
+              Maven:
               <pre>
 &lt;dependency&gt;
     &lt;groupId&gt;com.facebook.fbui.textlayoutbuilder&lt;/groupId&gt;
@@ -137,10 +129,10 @@ Layout layout = new TextLayoutBuilder()
     <div class="instructionsContainer">
       <div class="wrapper">
         <section>
-          <h3>Usage</h3>
+          <h3>使用</h3>
           <ol>
             <li>
-              Set the properties on the <code>TextLayoutBuilder</code>:
+              通过 <code>TextLayoutBuilder</code> 设置参数：
               <pre>
 TextLayoutBuilder builder = new TextLayoutBuilder()
     .setTextAppearance(context, resId)
@@ -148,11 +140,11 @@ TextLayoutBuilder builder = new TextLayoutBuilder()
     .setWidth(400);</pre>
             </li>
             <li>
-              Call <code>build()</code> on the builder to get a <code>Layout</code>:
+              调用 <code>build()</code> 得到一个 <code>Layout</code>：
               <pre>Layout layout = builder.build();</pre>
             </li>
             <li>
-              Use the <code>Layout</code> in your code:
+              在你的代码中使用 <code>Layout</code> ：
               <pre>layout.draw(canvas);</pre>
             </li>
           </ol>
@@ -167,19 +159,19 @@ TextLayoutBuilder builder = new TextLayoutBuilder()
           <h3>Additional Usage</h3>
           <ol>
             <li>
-              Cache the layouts for commonly used strings by turning on caching in the <code>TextLayoutBuilder</code>.
+              常用文字布局缓存, 设置 <code>TextLayoutBuilder</code>：
               <pre>mTextLayoutBuilder.setShouldCacheLayout(true);</pre>
             </li>
             <li>
-              Glyph warming provides significant performance boost for large blurbs of text.
-              Turn this on and pass in a <code>GlyphWarmer</code> for the <code>TextLayoutBuilder</code>.
+              对于大段文字，字体图形的预热会带来显著的性能提升，打开预热，并给 <code>TextLayoutBuilder</code> 传入一个
+              <code>GlyphWarmer</code> ：
               <pre>
 mTextLayoutBuilder
     .setShouldWarmText(true)
     .setGlyphWarmer(new GlyphWarmerImpl());</pre>
             </li>
             <li>
-              Import a style defined in XML into a <code>TextLayoutBuilder</code> object.
+              给 <code>TextLayoutBuilder</code> 指定一个 XML 文件，可在这个 XML 文件中定义好样式：
               <pre>
 ResourceTextLayoutHelper.updateFromStyleResource(
     mTextLayoutBuilder,
@@ -241,7 +233,7 @@ ResourceTextLayoutHelper.updateFromStyleResource(
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-44373548-22', 'auto');
+      ga('create', 'UA-43024238-15', 'auto');
       ga('send', 'pageview');
     </script>
   </body>
